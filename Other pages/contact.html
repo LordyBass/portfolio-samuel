@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Me</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="icon" href="../Data/icon.png"> 
+    </head>
+    <body class="darkblue scroll-smooth">
+        <style>
+            body{
+            font-family: 'Open Sans', sans-serif;
+            cursor: url(./Data/mousepointer.png),pointer;
+            animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+            a, .ease-in-out{
+            cursor: url(../Data/mouseclick.png),default;
+            }
+            .container{
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+            @media (min-width: 1024px) {
+                .container{
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+                .container1{
+                    padding-right: 38rem;
+                }
+            }
+            @media (min-width: 1280px) {
+                .container1{
+                    padding-right: 40rem;
+                }
+            }
+            @media (min-width: 1536px) {
+                .container1{
+                    padding-right: 44rem;
+                }
+            }
+            .background{
+                background-image: url(./Data/Background.png);
+                background-position: center;
+                background-size: cover;
+                position: relative;
+            }
+            @media (max-width: 1023px) {
+                .background{
+                    margin: 0;
+                    background-size: 400vh;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+            .darkblue{
+                background-color: #001A3D;
+            }
+            .yellow{
+                color: #EDC00E;
+            }
+            .blue2{
+                background-color: #101464;
+                color: #101464;
+            }
+            @media (max-width: 1023px) {
+                .blue{
+                background-color: #101464;
+                }
+            }
+            .hamburger-active > span:nth-child(1){
+                transform: rotate(45deg);
+            }
+            .hamburger-active > span:nth-child(2){
+                scale: 0;
+            }
+            .hamburger-active > span:nth-child(3){
+                transform: rotate(-45deg);
+            }
+            .navbar-fixed{
+                position: fixed;
+                z-index: 9999;
+                background-color: rgba(8, 4, 124, 0.5);
+                backdrop-filter: blur(5px);
+                box-shadow: inset 0 -1px 0 0 rgba(255, 221, 26, 0.7);
+            }
+            @media (max-width: 1023px) {
+                .border-yellow{
+                box-shadow: inset 0 -1px 0 0 rgba(255, 221, 26, 0.7);
+                }
+            }
+        </style>
+    
+        <!-- Navbar Section Start -->
+        <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+            <div class="container mx-auto">
+                <div class="flex items-center relative justify-between mx-auto">
+                    <div class="px-4">
+                        <a href="../index.html"><img src="../Data/logo.png" class="w-16" alt="logo"></a>
+                    </div>
+                    <div class="flex items-center px-4">
+                        <button id="hamburger" name="hamburger" type="button" class="block absolute
+                        right-4 lg:hidden">
+                            <span class="my-2 block bg-white w-[30px] h-[2px] transition 
+                            duration-300 ease-in-out origin-top-left"></span>
+                            <span class="my-2 block bg-white w-[30px] h-[2px] transition 
+                            duration-300 ease-in-out"></span>
+                            <span class="my-2 block bg-white w-[30px] h-[2px] transition 
+                            duration-300 ease-in-out origin-bottom-left"></span>
+                        </button>
+                        <nav id="nav-menu" class="hidden absolute py-5 blue shadow-lg 
+                        rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static 
+                        lg:w-max-full lg:shadow-none lg:rounded-none lg:text-right container1">
+                            <ul class="block mb-3 lg:flex">
+                                <li class="group">
+                                    <a href="../index.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                    mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">Home</a>
+                                </li>
+                                <li class="group">
+                                    <a href="./about.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                    mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">About</a>
+                                </li>
+                                <li class="group">
+                                    <a href="./resume.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                    mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">Resume</a>
+                                </li>
+                                <li class="group">
+                                    <a href="./portfolio.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                    mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">Portfolio</a>
+                                </li>
+                                <li class="group">
+                                    <a href="./portfolio.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                    mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Navbar Section End -->
+
+        <!-- Contact Section Start -->
+        <section>
+            <div class="container pt-36 mx-auto">
+                <div class="w-full px-10 mb-36 yellow leading-relaxed mx-auto">
+                    <h1 class="font-bold text-3xl mb-6 underline underline-offset-8">
+                        MY CONTACT
+                    </h1>
+                    <p class="text-2xl lg:text-3xl mt-24 font-semibold">
+                        Get in Touch with Me...
+                    </p>
+                    <div class="py-4 pt-10 text-lg lg:text-xl">
+                        <span class="font-semibold">LinkedIn</span>:
+                        <a href="https://www.linkedin.com/in/samuel-sinulingga/" class="text-lg lg:text-xl hover:text-yellow-500 hover:underline">
+                            linkedin.com/in/samuel-sinulingga-220ab6273/
+                        </a> <br>
+                        <span class="font-semibold">Email</span> :
+                        <a href="mailto:sinulinggasamuel1153@gmail.com" class="text-lg lg:text-xl hover:text-yellow-500 hover:underline">
+                            sinulinggasamuel1153@gmail.com
+                        </a> <br>
+                        <span class="font-semibold">Instagram</span> :
+                        <a href="https://www.instagram.com/stefanus_samuel/" class="text-lg lg:text-xl hover:text-yellow-500 hover:underline">
+                            @stefanus_samuel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section End -->
+
+        <!-- Footer Start -->
+        <footer class="bg-black py-8">
+            <div class="container mx-auto">
+                <div class="flex flex-wrap justify-center">
+                    <a href="https://www.instagram.com/stefanus_samuel/"><img src="../Data/instagram.png" alt="instagram" class="w-10 mx-4"></a>
+                    <a href="mailto:sinulinggasamuel1153@gmail.com"><img src="../Data/gmail.png" alt="instagram" class="w-10 mx-4"></a>
+                    <a href="https://www.linkedin.com/in/samuel-sinulingga/"><img src="../Data/linkedin.png" alt="instagram" class="w-10 mx-4"></a>
+                </div>
+                <p class="text-center text-white mt-4">
+                    Copyright © 2023 Samuel Sinulingga 
+                </p>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+    </body>
+<script src="../Script/script.js"></script>
+</html>

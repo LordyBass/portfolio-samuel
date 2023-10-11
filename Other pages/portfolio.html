@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="../Data/icon.png">
+</head>
+<body class="darkblue scroll-smooth">
+    <style>
+        body{
+            font-family: 'Open Sans', sans-serif;
+            cursor: url(./Data/mousepointer.png),pointer;
+            animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        a, .ease-in-out{
+            cursor: url(../Data/mouseclick.png),default;
+        }
+        .container{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        @media (min-width: 1024px) {
+            .container{
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+            .container1{
+                padding-right: 38rem;
+            }
+        }
+        @media (min-width: 1280px) {
+            .container1{
+                padding-right: 40rem;
+            }
+        }
+        @media (min-width: 1536px) {
+            .container1{
+                padding-right: 44rem;
+            }
+        }
+        .background{
+            background-image: url(./Data/Background.png);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        @media (max-width: 1023px) {
+            .background{
+                margin: 0;
+                background-size: 400vh;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+        .darkblue{
+            background-color: #001A3D;
+        }
+        .yellow{
+            color: #EDC00E;
+        }
+        .blue2{
+            background-color: #101464;
+            color: #101464;
+        }
+        @media (max-width: 1023px) {
+            .blue{
+            background-color: #101464;
+            }
+        }
+        .hamburger-active > span:nth-child(1){
+            transform: rotate(45deg);
+        }
+        .hamburger-active > span:nth-child(2){
+            scale: 0;
+        }
+        .hamburger-active > span:nth-child(3){
+            transform: rotate(-45deg);
+        }
+        .navbar-fixed{
+            position: fixed;
+            z-index: 9999;
+            background-color: rgba(8, 4, 124, 0.5);
+            backdrop-filter: blur(5px);
+            box-shadow: inset 0 -1px 0 0 rgba(255, 221, 26, 0.7);
+        }
+        @media (max-width: 1023px) {
+            .border-yellow{
+            box-shadow: inset 0 -1px 0 0 rgba(255, 221, 26, 0.7);
+            }
+        }
+    </style>
+
+    <!-- Navbar Section Start -->
+    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+        <div class="container mx-auto">
+            <div class="flex items-center relative justify-between">
+                <div class="px-4">
+                    <a href="../index.html"><img src="../Data/logo.png" class="w-16" alt="logo"></a>
+                </div>
+                <div class="flex items-center px-4">
+                    <button id="hamburger" name="hamburger" type="button" class="block absolute
+                    right-4 lg:hidden">
+                        <span class="my-2 block bg-white w-[30px] h-[2px] transition 
+                        duration-300 ease-in-out origin-top-left"></span>
+                        <span class="my-2 block bg-white w-[30px] h-[2px] transition 
+                        duration-300 ease-in-out"></span>
+                        <span class="my-2 block bg-white w-[30px] h-[2px] transition 
+                        duration-300 ease-in-out origin-bottom-left"></span>
+                    </button>
+                    <nav id="nav-menu" class="hidden absolute py-5 blue shadow-lg 
+                    rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static 
+                    lg:w-max-full lg:shadow-none lg:rounded-none lg:text-right container1">
+                        <ul class="block mb-3 lg:flex">
+                            <li class="group">
+                                <a href="../index.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">Home</a>
+                            </li>
+                            <li class="group">
+                                <a href="./about.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">About</a>
+                            </li>
+                            <li class="group">
+                                <a href="./resume.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">Resume</a>
+                            </li>
+                            <li class="group">
+                                <a href="./portfolio.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">Portfolio</a>
+                            </li>
+                            <li class="group">
+                                <a href="./contact.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Navbar Section End -->
+
+    <!-- Portfolio Section Start -->
+    <section id="Portfolio" class="pt-36 pb-16">
+        <div class="container w-full px-4 mx-auto">
+            <div class="mx-auto mb-4">
+                <h1 class="font-bold text-yellow-400 text-3xl mb-10
+                underline underline-offset-8 uppercase">MY Portfolio</h1> 
+
+            <!-- UI / UX Design -->
+
+                <p id="uiux" class="font-semibold text-xl bg-blue-900 bg-opacity-60
+                text-yellow-400 px-2 pl-4 py-3 rounded-md mt-5">UI / UX Design
+                </p>
+            </div>
+            <div class="w-full flex flex-wrap justify-center">
+                <div class="mb-1 p-4 lg:w-1/2">
+                    <div class="rounded-md shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/UIUX_Design1.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                        Value Proposition Canvas of <a href="https://netflix.com/" 
+                        class="hover:text-yellow-500 hover:underline">Netflix</a></h3>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">I created this 
+                        Value Proposition Canvas during my participation in the Myskill.id 
+                        bootcamp to analyze the Pains, Gains, and Jobs to be Done from the customer's 
+                        perspective for Netflix, as well as the Gain Creator, Pain Relievers, and 
+                        Products & Services from Netflix's product perspective, based on my analysis and assumptions.
+                    </h3>
+                </div>
+                <div class="mb-6 p-4 lg:w-1/2">
+                    <div class="rounded-md shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/UIUX_Design2.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                        User Journey Map of <a href="https://open.spotify.com/" 
+                        class="hover:text-yellow-500 hover:underline">Sportify</a></h3>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">I also crafted this User Journey Map while 
+                        attending the Myskill.id bootcamp to identify the common user complaints and user feels when upgrading 
+                        to Spotify Premium.
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Website Design -->
+
+            <div class="mx-auto mb-4">
+                <p id="web" class="font-semibold text-xl bg-blue-900 bg-opacity-60
+                text-yellow-400 px-2 pl-4 py-3 rounded-md my-5">Website Design
+                </p>
+            </div>
+            <div class="w-full px-4 flex flex-wrap justify-center">
+                <div class="mb-1 p-4 lg:w-1/2">
+                    <div class="rounded-md shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/Website_Design1.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                        Anime x Game Festival 2022 (unofficial)</h3>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">I developed this website as my very first project 
+                        at the State Polytechnic of Jakarta, using only HTML and Vanilla CSS without any adjustments for mobile 
+                        users or JavaScript.
+                    </h3>
+                </div>
+                <div class="mb-1 p-4 lg:w-1/2">
+                    <div class="rounded-md shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/Website_Design2.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                        TinDog (ft. <a href="https://appbrewery.com/" 
+                        class="hover:text-yellow-500 hover:underline">AppBrewery</a>)</h3>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">I designed this website during my participation in 
+                        the AppBrewery course, focusing on creating a Bootstrap-based website and executing ideas from the AppBrewery course.
+                    </h3>
+                </div>
+                <div class="mb-1 p-4 lg:w-1/2">
+                    <div class="rounded-md shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/Website_Design4.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                        Design Agency (ft. <a href="https://appbrewery.com/" 
+                        class="hover:text-yellow-500 hover:underline">AppBrewery</a>)</h3>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">I also designed this website during my participation in the 
+                        AppBrewery course, creating a website using Vanilla CSS (float) and executing ideas from the AppBrewery course.
+                    </h3>
+                </div>
+                <div class="mb-6 p-4 lg:w-1/2">
+                    <div class="rounded-md shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/Website_Design3.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                        Web Portfolio of Mine :)</h3>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">This is my second self-designed website where I established a 
+                        font and color palette concept for both mobile and PC users. I developed this website using Tailwind CSS and a bit of JavaScript.
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Graphic Design -->
+
+            <div class="mx-auto mb-4">
+                <p id="graphic" class="font-semibold text-xl bg-blue-900 bg-opacity-60
+                text-yellow-400 px-2 pl-4 py-3 rounded-md my-5">Graphic Design
+            </p>
+            </div>
+            <div class="w-full px-4 flex flex-wrap justify-center">
+                <div class="mb-1 p-4 lg:w-1/2">
+                    <div class="rounded-md shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/Graphic_Design5.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                        Digital Poster for <a href="https://www.instagram.com/panitianatalsanbarto/" 
+                        class="hover:text-yellow-500 hover:underline">@panitianatalsanbarto, </a>
+                        <a href="https://www.instagram.com/hme_pnj/" 
+                        class="hover:text-yellow-500 hover:underline">@hme_pnj, </a> and
+                        <a href="https://www.instagram.com/comicclubtgp/" 
+                        class="hover:text-yellow-500 hover:underline">@comicclubtgp</a></h3>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">I created posters for Instagram content, 
+                        paying attention to themes and account alignment. I designed these posters using Photoshop and Canva 
+                        as supporting software.
+                    </h3>
+                </div>
+                <div class="mb-1 p-4 lg:w-1/2">
+                    <div class="rounded-md shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/Graphic_Design4.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                        Feeds Grid and Highlights for <a href="https://www.instagram.com/panitianatalsanbarto/" 
+                        class="hover:text-yellow-500 hover:underline">@panitianatalsanbarto</a></h3>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">I served as a social media specialist for 
+                        my parish's Christmas committee's Instagram account. I aimed to make the account visually appealing 
+                        and informative through well-organized feeds and stories. I used Canva and Photoshop for my Instagram editing.
+                    </h3>
+                </div>
+                <div class="mb-1 p-4 lg:w-1/2">
+                    <div class="rounded-md shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/Graphic_Design6.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                        Logo Design for <a href="https://www.instagram.com/panitianatalsanbarto/" 
+                        class="hover:text-yellow-500 hover:underline">@panitianatalsanbarto</a></h3>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">I also designed a logo for my parish's Christmas committee's 
+                        Instagram account, following the themes of solidarity and subsidiarity, and using a Christmas color palette. I created 
+                        this design using Clip Studio Paint and Photoshop.
+                    </h3>
+                </div>
+                <div class="mb-1 p-4 lg:w-1/2">
+                    <div class="rounded-md shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/Graphic_Design1.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                        T-Shirt Design for <a href="https://www.instagram.com/kmkpnj/" 
+                        class="hover:text-yellow-500 hover:underline">@kmkpnj</a>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">I designed T-shirts for KMK PNJ for a special event, manually 
+                        creating the logo with Clip Studio Paint and refining it in Photoshop to achieve a streetwear look.
+                    </h3>
+                </div>
+                <div class="mb-1 p-4 lg:w-1/2">
+                    <div class="rounded-md shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/Graphic_Design3.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                        E-Certificate Design for <a href="https://www.instagram.com/kmkpnj/" 
+                        class="hover:text-yellow-500 hover:underline">@kmkpnj</a></h3>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">
+                        I designed e-certificates for KMK PNJ using Canva, incorporating design elements from the event, 
+                        such as batik patterns, to create a fitting atmosphere.
+                    </h3>
+                </div>
+                <div class="mb-1 p-4 lg:w-1/2">
+                    <div class="rounded-md shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/Graphic_Design7.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                        I am also capable of creating Character Illustrations</h3>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">I have a passion for character illustration, 
+                        and I create these illustrations using Clip Studio Paint.
+                    </h3>
+                </div>
+                <div class="mb-6 p-4 lg:w-1/2">
+                    <div class="rounded-md text-lg shadow-md shadow-yellow-500 
+                    overflow-hidden">
+                        <img src="../Portfolio/Graphic_Design2.png" alt="uiux1" 
+                        width="100%"/>
+                    </div>
+                    <h3 class="font-semibold text-yellow-400 text-center mt-5">
+                        And I am also capable of creating Comics. (ft. <a href="https://www.instagram.com/comicclubtgp/" 
+                        class="hover:text-yellow-500 hover:underline">@comicclubtgp</a>)</h3>
+                    <h3 class="text-yellow-400 opacity-90 text-justify mt-1">I enjoy creating comic strips as well. For this 
+                        project, I collaborated with a team of five individuals over a month, working on the final Comic Rush 
+                        for the Comic Club TGP. I created these illustrations using Clip Studio Paint.
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section End -->
+
+    <!-- Footer Start -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap justify-center">
+                <a href="https://www.instagram.com/stefanus_samuel/"><img src="../Data/instagram.png" alt="instagram" class="w-10 mx-4"></a>
+                <a href="mailto:sinulinggasamuel1153@gmail.com"><img src="../Data/gmail.png" alt="instagram" class="w-10 mx-4"></a>
+                <a href="https://www.linkedin.com/in/samuel-sinulingga/"><img src="../Data/linkedin.png" alt="instagram" class="w-10 mx-4"></a>
+            </div>
+            <p class="text-center text-white mt-4">
+                Copyright © 2023 Samuel Sinulingga 
+            </p>
+        </div>
+    </footer>
+    <!-- Footer End -->
+</body>
+<script src="../Script/script.js"></script>
+</html>
