@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel = "icon" href = "Data/icon.png">
+</head>
+<body class="darkblue scroll-smooth">
+    <style>
+        body{
+            font-family: 'Open Sans', sans-serif;
+            cursor: url(./Data/mousepointer.png),pointer;
+            animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        a, .ease-in-out{
+            cursor: url(./Data/mouseclick.png),default;
+        }
+        .container{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        @media (min-width: 1024px) {
+            .container{
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+            .container1{
+                padding-right: 38rem;
+            }
+        }
+        @media (min-width: 1280px) {
+            .container1{
+                padding-right: 40rem;
+            }
+        }
+        @media (min-width: 1536px) {
+            .container1{
+                padding-right: 44rem;
+            }
+        }
+        .background{
+            background-image: url(./Data/Background.png);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        @media (max-width: 1023px) {
+            .background{
+                margin: 0;
+                background-size: 400vh;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+        .darkblue{
+            background-color: #001A3D;
+        }
+        .yellow{
+            color: #EDC00E;
+        }
+        .blue2{
+            background-color: #101464;
+            color: #101464;
+        }
+        @media (max-width: 1023px) {
+            .blue{
+            background-color: #101464;
+            }
+        }
+        .hamburger-active > span:nth-child(1){
+            transform: rotate(45deg);
+        }
+        .hamburger-active > span:nth-child(2){
+            scale: 0;
+        }
+        .hamburger-active > span:nth-child(3){
+            transform: rotate(-45deg);
+        }
+        .navbar-fixed{
+            position: fixed;
+            z-index: 9999;
+            background-color: rgba(8, 4, 124, 0.5);
+            backdrop-filter: blur(5px);
+            box-shadow: inset 0 -1px 0 0 rgba(255, 221, 26, 0.7);
+        }
+        @media (max-width: 1023px) {
+            .border-yellow{
+            box-shadow: inset 0 -1px 0 0 rgba(255, 221, 26, 0.7);
+            }
+        }
+    </style>
+
+    <!-- Navbar Section Start -->
+    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+        <div class="container mx-auto">
+            <div class="flex items-center relative justify-between">
+                <div class="px-4">
+                    <a href="./index.html"><img src="./Data/logo.png" class="w-16" alt="logo"></a>
+                </div>
+                <div class="flex items-center px-4">
+                    <button id="hamburger" name="hamburger" type="button" class="block absolute
+                    right-4 lg:hidden">
+                        <span class="my-2 block bg-white w-[30px] h-[2px] transition 
+                        duration-300 ease-in-out origin-top-left"></span>
+                        <span class="my-2 block bg-white w-[30px] h-[2px] transition 
+                        duration-300 ease-in-out"></span>
+                        <span class="my-2 block bg-white w-[30px] h-[2px] transition 
+                        duration-300 ease-in-out origin-bottom-left"></span>
+                    </button>
+                    <nav id="nav-menu" class="hidden absolute py-5 blue shadow-lg 
+                    rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static 
+                    lg:w-max-full lg:shadow-none lg:rounded-none lg:text-right container1">
+                        <ul class="block mb-3 lg:flex">
+                            <li class="group">
+                                <a href="./index.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">Home</a>
+                            </li>
+                            <li class="group">
+                                <a href="./Other pages/about.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">About</a>
+                            </li>
+                            <li class="group">
+                                <a href="./Other pages/resume.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">Resume</a>
+                            </li>
+                            <li class="group">
+                                <a href="./Other pages/portfolio.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">Portfolio</a>
+                            </li>
+                            <li class="group">
+                                <a href="./Other pages/contact.html" class="text-base text-yellow-400 py-2 ease-in-out text-center
+                                mx-8 flex hover:bg-yellow-500 hover:text-blue-950 px-4 border-yellow scroll-smooth">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Navbar Section End -->
+
+    <!-- Hero Section Start -->
+    <section class="background pt-32 lg:pt-20 border-yellow-500">
+        <div class="container mx-auto pt-8 data-te-animation-delay">
+            <div class="flex flex-wrap">
+                <div class="w-full self-center lg:pl-14 px-10 lg:w-1/2">
+                    <h1 class="yellow opacity-80 text-lg 2xl:text-xl leading-relaxed 
+                    md:pb-2">Hello there, i'm ...</h1>
+                    <h2 class="yellow font-bold text-4xl 2xl:text-5xl xl:text-4xl 
+                    lg:text-3xl md:text-5xl xl:pb-4 leading-relaxed pb-1">SAMUEL SINULINGGA</h2>
+                    <h3 class="yellow text-m 2xl:text-2xl xl:text-xl lg:text-xl 
+                    md:text-xl leading-relaxed">UI/UX Designer | Graphic Designer
+                        <br>Front End Web Developer</h3>
+                </div>
+                <div class="w-full self-end px-10 lg:w-1/2">
+                    <div class="relative mt-10 lg:mt-9 lg:right-0"> 
+                        <img src="./Data/Foto.png" alt="sam" class="max-w-full mx-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Features Section Start -->
+    <section class="container w-full px-4 mx-auto">
+        <div class="mx-auto mb-8">
+            <h1 id="uiux" class="font-semibold text-xs blue2 shadow-xl shadow-yellow-500
+            rounded-md w-full">a</h1>
+        </div>
+        <div class="w-full flex flex-wrap justify-evenly">
+            <div class="mb-10 p-4 lg:w-1/4 border-2 border-yellow-500 rounded-md bg-blue-900 
+            bg-opacity-50">
+                <div class="rounded-md overflow-hidden">
+                    <img src="./Data/icon1.png" alt="graphicdesign" class="w-44 m-auto"/>
+                </div>
+                <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                    Graphic Design</h3>
+                <h3 class="text-yellow-400 opacity-90 text-center mt-1 mb-6">My passion for graphic design shines 
+                    through in every project. Explore my portfolio to see how I breathe life into brands and concepts 
+                    through thoughtful and impactful visuals.
+                </h3>
+                <div class="text-center mb-5">
+                    <a href="./Other pages/portfolio.html#graphic" class="bg-yellow-400 text-blue-950 rounded-full px-4 py-2 font-semibold
+                     hover:bg-yellow-500 text-xs ease-in-out">Here's My Portfolio</a>
+                </div>
+            </div>
+            <div class="mb-10 p-4 lg:w-1/4 border-2 border-yellow-500 rounded-md bg-blue-900 bg-opacity-40">
+                <div class="rounded-md overflow-hidden">
+                    <img src="./Data/icon2.png" alt="uiuxdesign" class="w-44 m-auto"/>
+                </div>
+                <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                    UI / UX Design</h3>
+                <h3 class="text-yellow-400 opacity-90 text-center mt-1 mb-6">Discover the magic of user-centered design. 
+                    Explore my portfolio to see how I transform complex concepts into user-friendly and aesthetically 
+                    pleasing digital solutions.
+                </h3>
+                <div class="text-center mb-5">
+                    <a href="./Other pages/portfolio.html#uiux" class="bg-yellow-400 text-blue-950 rounded-full px-4 py-2 font-semibold
+                     hover:bg-yellow-500 text-xs ease-in-out">Here's My Portfolio</a>
+                </div>
+            </div>
+            <div class="mb-10 p-4 lg:w-1/4 border-2 border-yellow-500 rounded-md bg-blue-900 bg-opacity-40">
+                <div class="rounded-md overflow-hidden">
+                    <img src="./Data/icon3.png" alt="websitedesign" class="w-44 m-auto"/>
+                </div>
+                <h3 class="font-semibold text-lg text-yellow-400 text-center mt-5">
+                    Front End Web Development</h3>
+                <h3 class="text-yellow-400 opacity-90 text-center mt-1 mb-6">My commitment to enhancing the web experience 
+                    is evident in every project. Explore my portfolio to see how I ensure websites are not just visually 
+                    appealing but also performant and accessible.
+                </h3>
+                <div class="text-center mb-5">
+                    <a href="./Other pages/portfolio.html#web" class="bg-yellow-400 text-blue-950 rounded-full px-4 py-2 font-semibold
+                     hover:bg-yellow-500 text-xs ease-in-out">Here's My Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features Section End -->
+
+    <!-- Footer Start -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap justify-center ease-in-out">
+                <a href="https://www.instagram.com/stefanus_samuel/"><img src="./Data/instagram.png" alt="instagram" class="w-10 mx-4"></a>
+                <a href="mailto:sinulinggasamuel1153@gmail.com"><img src="./Data/gmail.png" alt="instagram" class="w-10 mx-4"></a>
+                <a href="https://www.linkedin.com/in/samuel-sinulingga/"><img src="./Data/linkedin.png" alt="instagram" class="w-10 mx-4"></a>
+            </div>
+            <p class="text-center text-white mt-4">
+                Copyright © 2023 Samuel Sinulingga 
+            </p>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    
+</body>
+<script src="./Script/script.js"></script>
+</html>
